@@ -8,12 +8,12 @@ In summary, correcting the code, I realized that if the SAT variables are all 1 
 ---
 
 ## Introducción
-The SAT problem is one of the most well-known problems in computational complexity theory. However, this paper introduces an alternative approach that challenges conventional methods and explores the possibility of solving it in nearly constant time...
+The SAT problem is one of the most well-known problems in computational complexity theory. However, this paper introduces an alternative approach that challenges conventional methods and explores the possibility of solving it in nearly constant time
 
 ---
 
 ## Metod
-In summary, I managed to make an algorithm which achieves in any SAT algorithm, no matter if it is gigantic or the most complex in the world, no matter what happens, one of the 2 conventions will always be true, which is all 0 or all 1...
+In summary, I managed to make an algorithm which achieves in any SAT algorithm, no matter if it is gigantic or the most complex in the world, no matter what happens, one of the 2 conventions will always be true, which is all 0 or all 1
 
 ```python
 # Función para comprobar este principio que yo cree
@@ -42,10 +42,10 @@ print("Resultado con todas las variables en 0:", resultados[1])
 
 ```
 ## Results of this algorithm
-In this case, it took between 0.1 seconds to 0.3 seconds to solve the SAT with 10,000 clauses.
+As you can see, you can solve the SAT using this method, in just 2 combinations.
 
 
-## Measuring the time and graphing how long it takes to solve from 5 to 5 up to 2000 clauses
+## Now we will graph how time grows by finding the solutions using this method.
 Below is the graph:
 
  ![ ](/Polinomial%20time.png)
