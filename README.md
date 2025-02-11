@@ -12,7 +12,7 @@ The SAT problem is one of the most well-known problems in computational complexi
 
 ---
 
-## Método
+## Metod
 The implemented algorithm is based on an optimization technique that uses principles from Euler's constant to reduce execution time in cases with large numbers of clauses...
 
 ```python
