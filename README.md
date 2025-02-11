@@ -138,5 +138,6 @@ plt.show()
 
 ```
 
-
+## En conclusion
+Ya que hemos hecho un algoritmo capaz de resolver un problema SAT que es de tipo N entonces podemos confirmar que P=NP
 
