@@ -1,41 +1,51 @@
-import time
-import math
+import matplotlib.pyplot as plt
+import numpy as np
+import time  # To measure execution time
 
-# Function to generate pseudo-random Eulerian values for the variables
-def generate_euler_values(n):
-    values = []
-    for i in range(n):
-        value = round(math.sin(math.e * i) % 1, 2)
-        values.append(1 if value > 0.5 else 0)
-    return values
+# Function to check the SAT Law with a more complex SAT problem
+def check_sat_law(formula, variables):
+    # Evaluate the formula with all variables set to 1
+    true_all_ones = formula(*[1 for _ in variables])
+    
+    # Evaluate the formula with all variables set to 0
+    true_all_zeros = formula(*[0 for _ in variables])
+    
+    return true_all_ones, true_all_zeros
 
-# Boolean formula with more clauses (adding extra clauses)
-def evaluate_formula_with_clauses(variables, num_clauses):
-    clauses = [
-        (variables[0] or not variables[1]),  # Clause 1: (A or not B)
-        (not variables[2] or variables[3]),  # Clause 2: (not C or D)
-        (variables[4] or variables[5] or not variables[6]),  # Clause 3: (E or F or not G)
-        (not variables[7] or variables[8] or variables[9]),  # Clause 4: (not H or I or J)
-    ]
-    
-    # Add extra clauses
-    for i in range(4, num_clauses):
-        clauses.append(variables[i % 10] or not variables[(i + 1) % 10])
-    
-    return all(clauses)
+# Define the hardest SAT formula
+def formula(*args):
+    # The number of variables is flexible here
+    return any(args)  # Simple OR clause example
 
-# Function to solve the SAT with different numbers of clauses and measure the time
-def solve_SAT_with_clauses(num_clauses):
-    start_time = time.time()  # Measure the start time
-    
-    for _ in range(100):  # Try 100 pseudo-random combinations
-        values = generate_euler_values(10)
-        if evaluate_formula_with_clauses(values, num_clauses):
-            return time.time() - start_time  # Return the execution time
-    
-    return time.time() - start_time  # If no solution is found, return the time
+# List of variables to use, now expanded up to number 100
+variables = [f'V{i}' for i in range(1, 101)]
 
-# Run with 10,000 clauses and measure the time
-num_clauses = 10000
-time_taken = solve_SAT_with_clauses(num_clauses)
-print(f"Execution time for {num_clauses} clauses: {time_taken} seconds")
+# Store the results
+execution_times = []  # To store execution times
+num_clauses = []  # To store the number of clauses
+
+# Test every 5 clauses
+for i in range(5, 1001, 5):  # Test from 1 to 100 clauses, in steps of 5
+    current_vars = variables[:i]
+    
+    # Measure execution time
+    start_time = time.time()
+    check_sat_law(formula, current_vars)
+    end_time = time.time()
+    
+    # Store execution time and the number of clauses
+    execution_times.append(end_time - start_time)
+    num_clauses.append(i)
+
+# Data for the plot
+time_data = np.array(num_clauses)
+
+# Create the plot
+plt.figure(figsize=(10, 6))
+plt.plot(time_data, execution_times, marker='o', color='r', label='Execution Time')
+plt.xlabel('Number of Clauses')
+plt.ylabel('Execution Time (seconds)')
+plt.title('Execution Time vs Number of Clauses')
+plt.grid(True)
+plt.legend()
+plt.show()
