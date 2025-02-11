@@ -74,7 +74,7 @@ En este caso tardo entre 0.1 segundos a 0.3 segundos en resolver el SAT con 10 m
 ## Midiendo el tiempo y graficando cuanto tiempo tarda en resolver de 5 en 5 hasta 2000 clausulas
 A continuacion se muestra la grafica:
 
-![Descripción de la imagen](SATsolverpolinomialtime/Polinomial time.png)
+ ![Descripción de la imagen](SATsolverpolinomialtime/Polinomial%20time.png)
 
 
 
