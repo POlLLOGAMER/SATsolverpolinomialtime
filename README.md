@@ -16,28 +16,28 @@ The SAT problem is one of the most well-known problems in computational complexi
 In summary, I managed to make an algorithm which achieves in any SAT algorithm, no matter if it is gigantic or the most complex in the world, no matter what happens, one of the 2 conventions will always be true, which is all 0 or all 1
 
 ```python
-# Función para comprobar este principio que yo cree
-def comprobar_ley_de_kaoru(fórmula, variables):
-    # Evaluamos la fórmula con todas las variables en 1
-    true_all_ones = fórmula(**{var: 1 for var in variables})
+# Function to check this principle that I created
+def check_universal_sat_law(formula, variables):
+    # Evaluate the formula with all variables set to 1
+    true_all_ones = formula(**{var: 1 for var in variables})
     
-    # Evaluamos la fórmula con todas las variables en 0
-    true_all_zeros = fórmula(**{var: 0 for var in variables})
+    # Evaluate the formula with all variables set to 0
+    true_all_zeros = formula(**{var: 0 for var in variables})
     
     return true_all_ones, true_all_zeros
 
-# Definimos la fórmula SAT más difícil
-def fórmula(A, B, C, D, E, F):
+# Define the hardest SAT formula
+def formula(A, B, C, D, E, F):
     return (A or B) and (C or D) and (E or F)
 
-# Lista de las variables a usar
+# List of variables to use
 variables = ['A', 'B', 'C', 'D', 'E', 'F']
 
-# Comprobamos si la ley se cumple
-resultados = comprobar_ley_de_kaoru(fórmula, variables)
+# Check if the law is satisfied
+results = check_universal_sat_law(formula, variables)
 
-print("Resultado con todas las variables en 1:", resultados[0])
-print("Resultado con todas las variables en 0:", resultados[1])
+print("Result with all variables set to 1:", results[0])
+print("Result with all variables set to 0:", results[1])
 
 
 ```
