@@ -77,5 +77,6 @@ A continuacion se muestra la grafica:
  ![ ](/Polinomial%20time.png)
 
 
-
+## Aqui esta el codigo para medir el tiempo de ejecucion, en base al crecimiento de las clausulas, que fue el que dio la anterior grafica
+Necesita instalar los requerimientos que esta en requeriments.txt
 
