@@ -69,8 +69,13 @@ print(f"Tiempo de ejecución para {num_clausulas} cláusulas: {tiempo} segundos"
 ```
 ## Resultados de este algoritmo
 En este caso tardo entre 0.1 segundos a 0.3 segundos en resolver el SAT con 10 mil clausulas
----
-##Midiendo el tiempo y graficando cuanto tiempo tarda en resolver de 5 en 5 hasta 2000 clausulas
+
+
+## Midiendo el tiempo y graficando cuanto tiempo tarda en resolver de 5 en 5 hasta 2000 clausulas
+A continuacion se muestra la grafica:
+
+![Descripción de la imagen](images/logo.png)
+
 
 
 
