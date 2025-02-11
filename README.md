@@ -48,7 +48,7 @@ As you can see, you can solve the SAT using this method, in just 2 combinations.
 ## Now we will graph how time grows by finding the solutions using this method.
 Below is the graph:
 
- ![ ](/Polinomial%20time.png)
+ ![ ](/Updated%20polinomial%20time.png)
 
 
 ## Here is the code to measure the execution time, based on the growth of the clauses, which generated the previous graph
