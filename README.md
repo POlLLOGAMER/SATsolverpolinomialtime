@@ -66,3 +66,7 @@ num_clausulas = 10000
 tiempo = resolver_SAT_con_clausulas(num_clausulas)
 print(f"Tiempo de ejecución para {num_clausulas} cláusulas: {tiempo} segundos")
 
+## Resultados de este algoritmo
+En este caso tardo entre 0.1 segundos a 0.3 segundos en resolver el SAT con 10 mil clausulas
+
+
